@@ -75,8 +75,12 @@ const displayData = (data) => {
     data.forEach((data) => {
         cardSection.innerHTML += `
         <div class="col">
-            <div class="card h-100 border-0">
+            <div class="card h-100 border-0 position-relative">
               <img src="${data.thumbnail}" class="card-img-top rounded h-50" alt="...">
+              ${
+                data.others.posted_date && 
+                `<p class="position-absolute end-0 me-1 bottom-50  rounded bg-secondary opacity-75 text-white ">${postedDate(data.others.posted_date)}</p>`
+              }
               <div class="card-body p-0 mt-3">
                 <div class="d-flex justify-content-between gap-3">
                     <div class="w-25">
@@ -98,10 +102,10 @@ const postedDate = (seconds) => {
     const minutes = Math.floor((seconds % 3600) / 60);
   
     if (hours === 0) {
-      return ${minutes} min ago;
+      return `${minutes} min ago`;
     } else if (minutes === 0) {
-      return ${hours} hrs ago;
+      return `${hours} hrs ago`;
     } else {
-      return ${hours} hrs ${minutes} min ago;
+      return `${hours} hrs ${minutes} min ago`;
     }
   };
