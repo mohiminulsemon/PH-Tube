@@ -1,26 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <title>PHero Tube</title>
-</head>
-<body>
-    <nav>
-        <img src="./Logo.png" alt="">
-        <button>Sort by view</button>
-        <a href="./blog.html" target="_blank">Blog</a>
+  </head>
+  <body class="container">
+    <!-- navigation bar -->
+    <nav class="d-flex justify-content-between align-items-center p-4">
+      <img src="./Logo.png" alt="" style="width: 9em" />
+      <button class="btn btn-secondary text-black fw-bold">Sort by view</button>
+      <a class="btn btn-danger fw-bold" href="./blog.html" target="_blank"
+        >Blog</a
+      >
     </nav>
+    <hr class="mt-0 mb-4" />
+
+    <!-- category section -->
+
+    <section>
+      <input
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="btnradio1"
+        autocomplete="off"
+        checked
+      />
+      <label class="btn btn-outline-danger" for="btnradio1">All</label>
+
+      <input
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="btnradio2"
+        autocomplete="off"
+      />
+      <label class="btn btn-outline-danger" for="btnradio2">Music</label>
+
+      <input
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="btnradio3"
+        autocomplete="off"
+      />
+      <label class="btn btn-outline-danger" for="btnradio3">Comedy</label>
+
+      <input
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="btnradio4"
+        autocomplete="off"
+      />
+      <label class="btn btn-outline-danger" for="btnradio4">Drawing</label>
+
+      <!-- <button>All</button>
+      <button>Music</button>
+      <button>Comedy</button>
+      <button>Drawing</button> -->
+    </section>
 
 
 
 
 
+
+    
     <!-- script js -->
     <script src="./script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
