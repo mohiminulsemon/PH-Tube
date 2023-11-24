@@ -15,12 +15,6 @@ const loadCategory = async () => {
 loadCategory();
 
 const displayCategory = (data) => {
-    
-    // data.forEach((data, index) => {
-    //     category.innerHTML += `
-    //     <button onclick="loadingData('${data.category_id}')" class='btn fw-semibold ${index === 0 && "bg-danger text-white"} bg-secondary'>${data.category}</button>
-    //     `
-    // })
 
     data.forEach((data, index) => {
         const button = document.createElement("button");
@@ -58,7 +52,7 @@ const loadingData = async (id) => {
     displayData(data.data);
 }
 
-loadingData(1000);
+loadingData(1000); // it will load by default all category data
 
 const displayData = (data) => {
 
@@ -97,6 +91,8 @@ const displayData = (data) => {
           </div>`;
 })}
 
+
+// converting seconds to hours and minutes
 const postedDate = (seconds) => {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
@@ -109,3 +105,12 @@ const postedDate = (seconds) => {
       return `${hours} hrs ${minutes} min ago`;
     }
   };
+
+  // sorting data by views
+  const sortByViews = (data) => {
+      
+    const sortedData = data.sort((a, b) => b.others.views - a.others.views);
+    displayData(sortedData);
+  }
+
+  

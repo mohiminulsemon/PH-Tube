@@ -8,8 +8,55 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>PHero | Blog</title>
 </head>
-<body>
-    <h1>this is blog </h1>
+<body class="container">
+    <nav class="row p-3">
+        <div class="col"><img src="./Logo.png" alt="" /></div>
+        <div class="col text-md-end"><a class="btn btn-danger fw-bold" href="./index.html" target="_self">Home</a></div>
+    </nav>
+    <hr class="mt-0 mb-4" />
+
+    <!-- blog section -->
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <strong>1. Discuss the scope of var, let, and const.</strong>
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Var: </strong>var is used to define a variable in javascript. It is a functional scope, means it cant be accessed outside the function. It has hoisting issues. <br>
+              <strong>let: </strong> It is also used to define a variable in javascript. It is a block scope, means it cant be accessed outside the block. It doesn't have hoisting issues like var.<br>
+              <strong>const: </strong> Const is used to declare variable that has fixed value. it cant be changed later.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+             <strong> 2. Tell us the use cases of null and undefined.</strong>
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Null : </strong> Null is a value that represents nothing. It is an object/variable that has no value.  <br>
+              <strong>Undefined : </strong> Undefined is absence of a value of a variables. If a varibles declared but not assigned a value, it returns undefined. 
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <strong>3. What do you mean by REST API?</strong>
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>REST API: </strong> REST API is an interface for web services. It stands for Representational State Transfer. It uses HTTP methods like GET, POST, PUT, PATCH, DELETE  operations on data/resources. It connects server to clients.
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
