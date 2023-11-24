@@ -1,7 +1,7 @@
 const category = document.getElementById("category");
 const cardSection = document.getElementById("card-section");
 const emptySection = document.getElementById("empty-section");
-
+let currentData = [];
 
 
 
@@ -49,15 +49,23 @@ const loadingData = async (id) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
     const data = await res.json();
     // console.log(data.data)
+    currentData = data.data; // Store the loaded data
     displayData(data.data);
 }
 
 loadingData(1000); // it will load by default all category data
 
-const displayData = (data) => {
+const displayData = (data, sortBy = null) => {
+
+    
+
+      // Sort the data if a sorting function is provided
+    if (sortBy) {
+        data.sort(sortBy);
+    }
 
     cardSection.innerHTML = "";
-
+    
     if (data.length === 0) {
         emptySection.classList.remove("d-none");
         return;
@@ -107,10 +115,26 @@ const postedDate = (seconds) => {
   };
 
   // sorting data by views
-  const sortByViews = (data) => {
-      
-    const sortedData = data.sort((a, b) => b.others.views - a.others.views);
-    displayData(sortedData);
-  }
+
+  const sortByViews = () => {
+    console.log('Button clicked');
+    console.log('Current data:', currentData);
+
+    displayData(currentData, (a, b) => {
+        const parseViews = (str) =>{
+          const numericValue = parseFloat(str.replace(/[^\d.]/g, ''));
+          const multiplier = str.includes('k') ? 1000 : 1;
+          return numericValue * multiplier;
+      }; // function to convert strings to numeric for compare
+
+        const viewsA = parseViews(a.others.views);
+        const viewsB = parseViews(b.others.views);
+
+        return viewsB - viewsA;
+    });
+};
+
+
+document.getElementById("sortByViewsBtn").addEventListener("click", sortByViews);
 
   
